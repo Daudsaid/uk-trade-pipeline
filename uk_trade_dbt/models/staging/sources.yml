@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: trade_db
+    database: trade_db
+    schema: public
+    tables:
+      - name: trade_flows
+        columns:
+          - name: id
+          - name: period
+          - name: flow_type
+          - name: commodity_id
+          - name: country_id
+          - name: port_id
+          - name: value_gbp
+          - name: net_mass_kg
+          - name: loaded_at
+
+      - name: dim_countries
+        columns:
+          - name: country_id
+          - name: country_name
+          - name: country_code
+
+      - name: dim_commodities
+        columns:
+          - name: commodity_id
+          - name: commodity_code
+          - name: commodity_desc
+
+      - name: dim_ports
+        columns:
+          - name: port_id
+          - name: port_name

@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_trade_flows
+    columns:
+      - name: trade_flow_id
+        tests:
+          - not_null
+      - name: period
+        tests:
+          - not_null
+      - name: flow_type
+        tests:
+          - not_null
+      - name: commodity_id
+        tests:
+          - not_null
+      - name: country_id
+        tests:
+          - not_null
+      - name: flow_direction
+        tests:
+          - accepted_values:
+              values: ['import', 'export']
+      - name: trade_bloc
+        tests:
+          - accepted_values:
+              values: ['EU', 'Non-EU']
+
+  - name: mart_trade_summary
+    columns:
+      - name: total_imports_gbp
+        tests:
+          - not_null
+      - name: total_exports_gbp
+        tests:
+          - not_null
+      - name: trade_balance_gbp
+        tests:
+          - not_null

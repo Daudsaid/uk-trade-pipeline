@@ -1,0 +1,12 @@
+uk_trade_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      dbname: trade_db
+      user: daudsaid
+      password: "{{ env_var('DB_PASSWORD') }}"
+      schema: public
+      threads: 4
